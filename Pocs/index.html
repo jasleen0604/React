@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    // function Hello()      // functional component
+    // {
+    //     return(
+    //         //JSX Code only
+    //         <h1>Hello</h1>
+    //     )
+    // }
+
+    function Hello({person="default", age="0"})
+    {
+        return(
+            <h1>Hello {person} age : {age}</h1>
+        )
+    }
+    function Hellos() //Component names have to start with upper case
+    {
+        return(
+            //wrapping multiple html elements
+            <React.Fragment>
+                <Hello person='Jasleen' age='20'/>
+                <Hello person='Tom' age='8'/>
+                <Hello person='Benny'/>
+                <Hello person='Jake'/>
+            </React.Fragment>   
+        )
+    }
+    ReactDOM.render(<Hellos/>, document.getElementById("root"));
+    </script>
+</body>
+</html>
